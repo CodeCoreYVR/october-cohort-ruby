@@ -2,13 +2,23 @@
 
 <form action="/contact" method="post">
   <label for="first_name">First Name</label>
-  <input type="text" id="first_name" name="first_name">
+  <input type="text" id="first_name" name="first_name" placeholder="e.g. John">
   <br>
   <label for="last_name">Last Name</label>
-  <input type="text" id="last_name" name="last_name">
+  <input type="text" id="last_name" name="last_name" placeholder="e.g. Smith">
   <br>
   <label for="email">Email</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="email" name="email" placeholder="e.g. john@smith.com">
+  <br>
+  <input type="checkbox" name="urgent" id="urgent">
+  <label for="urgent">Urgent?</label>
+  <br>
+  <input type="radio" name="department" id="sales" value="sales">
+  <label for="sales">Sales</label>
+  <input type="radio" name="department" id="technical" value="technical">
+  <label for="technical">Technical</label>
+  <input type="radio" name="department" id="marketing" value="marketing">
+  <label for="marketing">Marketing</label>
   <br>
   <input type="submit" value="Contact Us!!">
 </form>
