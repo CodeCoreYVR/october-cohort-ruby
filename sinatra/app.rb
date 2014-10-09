@@ -1,5 +1,6 @@
 require "sinatra"
-require "pony"
+
+require "./email_sender"
 
 get "/" do
   @name = params[:name]
@@ -15,14 +16,6 @@ get "/contact" do
 end
 
 post "/contact" do
-  message_body = "Category: #{params[:category]}
-                  Department: #{params[:department]}
-                  Urgent: #{params[:urgent] ? 'Yes' : 'No'}
-                  Message: #{params[:message]}"
-  Pony.mail(to: "tam@codecore.ca",
-            from: params[:email],
-            reply_to: params[:email],
-            subject: "#{params[:first_name]} contacted you!",
-            body: message_body)
+  EmailSender.mail(params)
   erb :thank_you, layout: :default
 end
