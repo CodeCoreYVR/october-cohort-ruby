@@ -30,3 +30,10 @@ label.selector {
 .a1 > .a2 {
   background-color: red;
 }
+
+.box-model {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border: 3px dashed;
+}

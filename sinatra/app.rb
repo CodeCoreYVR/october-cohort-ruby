@@ -1,6 +1,14 @@
 require "sinatra"
-
+require "data_mapper"
 require "./email_sender"
+
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/data.db")
+
+# Load up the models
+require "./contact"
+
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 get "/" do
   @name = params[:name]
@@ -16,6 +24,15 @@ get "/contact" do
 end
 
 post "/contact" do
-  EmailSender.mail(params)
+  Contact.create({
+      first_name: params[:first_name],
+      last_name:  params[:last_name],
+      email:      params[:email],
+      urgent:     params[:urgent] == "on",
+      department: params[:department],
+      category:   params[:category],
+      message:    params[:message]
+    })
+  # EmailSender.mail(params)
   erb :thank_you, layout: :default
 end
