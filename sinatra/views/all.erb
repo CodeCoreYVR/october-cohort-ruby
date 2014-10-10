@@ -1,0 +1,19 @@
+<h1>All Contacts</h1>
+
+<table class="contact-listing">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Department</th>
+    <th></th>
+  </tr>
+
+  <% @contacts.each do |con| %>
+    <tr>
+      <td><%= con.first_name %></td>
+      <td><%= con.last_name %></td>
+      <td><%= con.department %></td>
+      <td><a href="/contacts/<%= con.id %>">Show</a></td>
+    </tr>
+  <% end %>
+</table>

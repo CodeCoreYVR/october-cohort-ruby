@@ -1,0 +1,22 @@
+<a href="/all">&lt; All Contacts</a>
+<h1>Info about <%= @contact.first_name %></h1>
+
+<p>First Name: <%= @contact.first_name %></p>
+<p>Last Name: <%= @contact.last_name %></p>
+<p>Category: <%= @contact.category %></p>
+<p>Department: <%= @contact.department %></p>
+<p>Urgent: <%= @contact.urgent ? "Yes" : "No" %></p>
+<p>Message: <%= @contact.message %></p>
+<p>Note: <%= @contact.note %></p>
+<hr>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <textarea name="note"><%= @contact.note %></textarea>
+  <input type="submit" value="Save Note">
+</form>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

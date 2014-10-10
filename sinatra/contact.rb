@@ -9,5 +9,6 @@ class Contact
   property :department, String
   property :category, String
   property :message, Text
+  property :note, Text
 
 end

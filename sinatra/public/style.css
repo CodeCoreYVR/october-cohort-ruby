@@ -37,3 +37,18 @@ label.selector {
   background-color: yellow;
   border: 3px dashed;
 }
+
+
+table.contact-listing {
+  width: 100%;
+}
+
+table.contact-listing, .contact-listing td, .contact-listing th {
+  border: 1px solid black;
+}
+
+.contact-listing th {
+  text-align: left; 
+}
+
+

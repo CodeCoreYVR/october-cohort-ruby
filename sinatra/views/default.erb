@@ -6,10 +6,17 @@
   <meta name="keywords" content="sinatra tester application contact">
   <meta name="description" content="A page to learn Sinatra with Ruby">
 </head>  
-<body>
+<body style="background-color: <%= session[:color] %>">
   <a href="/">Home</a>
   |
   <a href="/contact">Contact Us</a>
+  | 
+  You last visited: <%= session[:last_visited_user_name] %>
+  |
+  <a href="/change_color/red">Red</a>
+  <a href="/change_color/yellow">Yellow</a>
+  <a href="/change_color/green">Green</a>
+
   <hr>
   <%= yield %>
 </body>
